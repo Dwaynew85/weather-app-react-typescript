@@ -5,6 +5,7 @@ import {LocationTable} from './LocationTable';
 import {WeatherLocation} from '../model/Weather';
 import {ErrorAlert, WarningAlert} from './Alert';
 import {searchLocation} from "../services/WeatherService"
+import { WeatherSummary } from './WeatherSummary';
 
 const App: FC = () => {
   const [locations, setLocations] = useState<WeatherLocation[]>([])
@@ -40,7 +41,8 @@ const App: FC = () => {
         locations={locations}
         current={currentLocation}
         onSelect={location => setCurrentLocation(location)}
-      />     
+      />
+      <WeatherSummary location={currentLocation}/>
     </div>
   );
 }
