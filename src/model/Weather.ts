@@ -9,7 +9,7 @@ export interface WeatherLocation {
     name: string;
 }
 
-export interface WeatherCondintions {
+export interface WeatherConditions {
     id: number;
     main: string;
     description: string;
