@@ -10,6 +10,7 @@ const App: FC = () => {
   const [locations, setLocations] = useState<WeatherLocation[]>([])
   const [error, setError] = useState('');
   const [warning, setWarning] = useState('');
+  const [currentLocation, setCurrentLocation] = useState<WeatherLocation | null>(null);
 
   const resetAlerts = () => {
     setError('');
@@ -35,7 +36,11 @@ const App: FC = () => {
       <LocationSearch onSearch={addLocation}/> 
       <ErrorAlert message={error}/>
       <WarningAlert message={warning}/>
-      <LocationTable locations={locations}/>     
+      <LocationTable 
+        locations={locations}
+        current={currentLocation}
+        onSelect={location => setCurrentLocation(location)}
+      />     
     </div>
   );
 }
