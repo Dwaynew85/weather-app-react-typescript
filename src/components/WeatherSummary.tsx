@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { Weather, WeatherLocation } from "../model/Weather";
 import { readForecast, readWeather } from "../services/WeatherService";
 import { WeatherEntry } from "./WeatherEntry";
-
+import './WeatherSummary.scss';
 
 interface WeatherSummaryProps {
     location: WeatherLocation | null;
